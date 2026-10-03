@@ -1,0 +1,14 @@
+{
+  "name": "mermail-invoice-payer",
+  "version": "1.0.0",
+  "description": "auto pay invoices from mermail inbox",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "npx tsx src/index.ts"
+  },
+  "dependencies": {
+    "@mermail/mcp-sdk": "^0.2.1",
+    "dotenv": "^16.3.1",
+    "tsx": "^4.7.0"
+  }
+}
