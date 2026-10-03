@@ -1,0 +1,48 @@
+{
+  "name": "mermail-invoice-payer",
+  "version": "1.0.0",
+  "description": "Auto pay invoices from Mermail inbox - Human-in-the-loop secure payer",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "demo": "tsx src/demo.ts"
+  },
+  "keywords": [
+    "mermail",
+    "mermail-skill",
+    "invoice",
+    "autopay",
+    "solana",
+    "superteam"
+  ],
+  "author": "pethuelkiprotich",
+  "license": "MIT",
+  "dependencies": {
+    "@mermail/sdk": "^0.2.0",
+    "zod": "^3.22.4",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "tsx": "^4.6.0",
+    "@types/node": "^20.10.0"
+  },
+  "mermail": {
+    "skill": "mermail-invoice-payer",
+    "tools": [
+      "mermail_list_emails",
+      "mermail_search_emails",
+      "mermail_get_email",
+      "mermail_transfer_funds",
+      "mermail_send_email"
+    ],
+    "requiresApproval": true,
+    "budgetCap": {
+      "perTransaction": 500,
+      "daily": 2000
+    }
+  }
+}
